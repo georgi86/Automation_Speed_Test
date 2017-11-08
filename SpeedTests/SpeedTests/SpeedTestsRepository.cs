@@ -29,6 +29,7 @@ namespace SpeedTests
         static SpeedTestsRepository instance = new SpeedTestsRepository();
         SpeedTestsRepositoryFolders.SnapXUntitledAppFolder _snapxuntitled;
         SpeedTestsRepositoryFolders.OpenSnapXRoutineAppFolder _opensnapxroutine;
+        SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder _elapsedtimeoneprtnotepad;
 
         /// <summary>
         /// Gets the singleton class instance representing the SpeedTestsRepository element repository.
@@ -47,6 +48,7 @@ namespace SpeedTests
         {
             _snapxuntitled = new SpeedTestsRepositoryFolders.SnapXUntitledAppFolder(this);
             _opensnapxroutine = new SpeedTestsRepositoryFolders.OpenSnapXRoutineAppFolder(this);
+            _elapsedtimeoneprtnotepad = new SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder(this);
         }
 
 #region Variables
@@ -81,6 +83,15 @@ namespace SpeedTests
         public virtual SpeedTestsRepositoryFolders.OpenSnapXRoutineAppFolder OpenSnapXRoutine
         {
             get { return _opensnapxroutine; }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeOnePRTNotepad folder.
+        /// </summary>
+        [RepositoryFolder("3df79756-6573-4060-af5c-1c0b3eb9011b")]
+        public virtual SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder ElapsedTimeOnePRTNotepad
+        {
+            get { return _elapsedtimeoneprtnotepad; }
         }
     }
 
@@ -296,6 +307,72 @@ namespace SpeedTests
                 get
                 {
                     return _filenamefieldInfo;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeOnePRTNotepadAppFolder folder.
+        /// </summary>
+        [RepositoryFolder("3df79756-6573-4060-af5c-1c0b3eb9011b")]
+        public partial class ElapsedTimeOnePRTNotepadAppFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _text15Info;
+
+            /// <summary>
+            /// Creates a new ElapsedTimeOnePRTNotepad  folder.
+            /// </summary>
+            public ElapsedTimeOnePRTNotepadAppFolder(RepoGenBaseFolder parentFolder) :
+                    base("ElapsedTimeOnePRTNotepad", "/form[@title~'^ElapsedTimeOne\\.PRT\\ -\\ Note']", parentFolder, 30000, null, true, "3df79756-6573-4060-af5c-1c0b3eb9011b", "")
+            {
+                _text15Info = new RepoItemInfo(this, "Text15", "text[@controlid='15']", 30000, null, "f2ef2c69-f0e7-4e31-ae76-6155a6c3d5f2");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("3df79756-6573-4060-af5c-1c0b3eb9011b")]
+            public virtual Ranorex.Form Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.Form>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("3df79756-6573-4060-af5c-1c0b3eb9011b")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item.
+            /// </summary>
+            [RepositoryItem("f2ef2c69-f0e7-4e31-ae76-6155a6c3d5f2")]
+            public virtual Ranorex.Text Text15
+            {
+                get
+                {
+                    return _text15Info.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item info.
+            /// </summary>
+            [RepositoryItemInfo("f2ef2c69-f0e7-4e31-ae76-6155a6c3d5f2")]
+            public virtual RepoItemInfo Text15Info
+            {
+                get
+                {
+                    return _text15Info;
                 }
             }
         }

@@ -138,14 +138,46 @@ namespace SpeedTests
             Host.Local.RunApplication("D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeOne.PRT", "", "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports", false);
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ReMeasure' at 43;10.", repo.SnapXUntitled.ReMeasureInfo, new RecordItemIndex(15));
+            Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeOnePRTNotepad'.", repo.ElapsedTimeOnePRTNotepad.SelfInfo, new RecordItemIndex(15));
+            repo.ElapsedTimeOnePRTNotepad.Self.Maximize();
+            Delay.Milliseconds(100);
+            
+            try {
+                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(16));
+                Validate.Attribute(repo.ElapsedTimeOnePRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n", Validate.DefaultMessage, false);
+                Delay.Milliseconds(100);
+            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(16)); }
+            
+            Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeOnePRTNotepad'.", repo.ElapsedTimeOnePRTNotepad.SelfInfo, new RecordItemIndex(17));
+            Host.Current.CloseApplication(repo.ElapsedTimeOnePRTNotepad.Self, new Duration(0));
+            Delay.Milliseconds(0);
+            
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ReMeasure' at 43;10.", repo.SnapXUntitled.ReMeasureInfo, new RecordItemIndex(18));
             repo.SnapXUntitled.ReMeasure.Click("43;10");
             Delay.Milliseconds(200);
             
-            Report.Log(ReportLevel.Info, "Wait", "Waiting 4m for item 'SnapXUntitled.Finish' to exist.", repo.SnapXUntitled.FinishInfo, new ActionTimeout(240000), new RecordItemIndex(16));
+            Report.Log(ReportLevel.Info, "Wait", "Waiting 4m for item 'SnapXUntitled.Finish' to exist.", repo.SnapXUntitled.FinishInfo, new ActionTimeout(240000), new RecordItemIndex(19));
             repo.SnapXUntitled.FinishInfo.WaitForExists(240000);
             
-            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.Finish' at 42;11.", repo.SnapXUntitled.FinishInfo, new RecordItemIndex(17));
+            Report.Log(ReportLevel.Info, "Application", "Run application 'D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeOne.PRT' with arguments '' in normal mode.", new RecordItemIndex(20));
+            Host.Local.RunApplication("D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeOne.PRT", "", "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports", false);
+            Delay.Milliseconds(0);
+            
+            Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeOnePRTNotepad'.", repo.ElapsedTimeOnePRTNotepad.SelfInfo, new RecordItemIndex(21));
+            repo.ElapsedTimeOnePRTNotepad.Self.Maximize();
+            Delay.Milliseconds(100);
+            
+            try {
+                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(22));
+                Validate.Attribute(repo.ElapsedTimeOnePRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n", Validate.DefaultMessage, false);
+                Delay.Milliseconds(100);
+            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(22)); }
+            
+            Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeOnePRTNotepad'.", repo.ElapsedTimeOnePRTNotepad.SelfInfo, new RecordItemIndex(23));
+            Host.Current.CloseApplication(repo.ElapsedTimeOnePRTNotepad.Self, new Duration(0));
+            Delay.Milliseconds(0);
+            
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.Finish' at 42;11.", repo.SnapXUntitled.FinishInfo, new RecordItemIndex(24));
             repo.SnapXUntitled.Finish.Click("42;11");
             Delay.Milliseconds(200);
             

@@ -3,6 +3,12 @@
 rxversion="7.0">
 	<testsuiteentryhierarchy>
 		<flatlistofchildren>
+			<testmodule
+			id="4e0bcab7-69f8-4dfd-8077-5a9509b6288c"
+			name="ActionTwo"
+			ref="f7a6d801-64e9-42c3-8a89-852c897edcf1"
+			type="Recording">
+			</testmodule>
 			<testcase
 			id="ccbcc68a-2b4d-4be6-89e9-44e0777ed2aa"
 			name="TestCase">
@@ -45,6 +51,10 @@ rxversion="7.0">
 						<testmodule
 						id="fdaf23f8-16fc-4f69-86e5-f3f1212d2f99"
 						name="ActionOne">
+						</testmodule>
+						<testmodule
+						id="4e0bcab7-69f8-4dfd-8077-5a9509b6288c"
+						name="ActionTwo">
 						</testmodule>
 					</testcase>
 				</testcase>

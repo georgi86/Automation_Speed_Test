@@ -67,6 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionTwo.cs">
+      <BoundTo>8404b519-70be-4326-92d2-470f8467100a</BoundTo>
+      <DependentUpon>ActionTwo.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>a46edcc5-9a73-46c8-b9c4-29f227cdb86d</id>
+    </Compile>
+    <Compile Include="ActionTwo.UserCode.cs">
+      <BoundTo>8404b519-70be-4326-92d2-470f8467100a</BoundTo>
+      <DependentUpon>ActionTwo.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>922157a6-86f7-4a54-be1d-b8e03c48c1a9</id>
+    </Compile>
     <Compile Include="AssemblyInfo.cs">
       <id>54999402-c306-4c93-9ed9-65f3804a1766</id>
     </Compile>
@@ -93,6 +105,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ActionTwo.rxrec">
+      <BoundTo>ff08158d-6c7e-4fb5-95ff-02ff0890a742</BoundTo>
+      <id>8404b519-70be-4326-92d2-470f8467100a</id>
+      <recordtableid>f7a6d801-64e9-42c3-8a89-852c897edcf1</recordtableid>
+    </None>
     <None Include="app.config">
       <id>7391b172-27c3-485d-ba3f-7fc22d7558f7</id>
     </None>

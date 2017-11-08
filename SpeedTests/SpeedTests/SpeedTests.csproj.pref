@@ -6,6 +6,7 @@
   <Array name="files">
     <Element value="SpeedTests.rxtst" />
     <Element value="ActionOne.rxrec" />
+    <Element value="ActionTwo.rxrec" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">

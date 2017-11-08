@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<recordtable
+embeddedrepository="False"
+id="f7a6d801-64e9-42c3-8a89-852c897edcf1"
+mode="Global"
+rxversion="7.0">
+	<name>
+		ActionTwo
+	</name>
+	<repeatcount>
+		1
+	</repeatcount>
+	<turbomode>
+		False
+	</turbomode>
+	<genreport>
+		True
+	</genreport>
+	<speedfactor>
+		1
+	</speedfactor>
+	<useDefaultItemLogging>
+		True
+	</useDefaultItemLogging>
+	<codegen
+	classname="ActionTwo"
+	namespace="SpeedTests">
+	</codegen>
+	<variables>
+	</variables>
+	<recorditems>
+	</recorditems>
+	<repository
+	id="a6b21130-8b8e-4aec-a001-93daa63209cb"
+	name="SpeedTestsRepository"
+	relativepath="SpeedTestsRepository.rxrep"
+	rxversion="7.0">
+		<codegen
+		classname="SpeedTestsRepository"
+		namespace="SpeedTests">
+		</codegen>
+		<rootfolder
+		id="f576162f-f336-45e8-b069-ccfbe6b9efbc"
+		name="_rootdummy_">
+		</rootfolder>
+	</repository>
+	<usercodefile
+	lang="CSharp">
+		ActionTwo.UserCode.cs
+	</usercodefile>
+	<references>
+	</references>
+</recordtable>

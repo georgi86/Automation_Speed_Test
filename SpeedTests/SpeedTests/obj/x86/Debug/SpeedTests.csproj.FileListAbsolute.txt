@@ -1,0 +1,9 @@
+D:\Joro\GIT_Automations\SpeedTests\SpeedTests\bin\Debug\SpeedTests.exe.config
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\bin\Debug\SpeedTests.rxtmg
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\bin\Debug\SpeedTests.rxtst
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\bin\Debug\SpeedTests.exe.config
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\bin\Debug\SpeedTests.exe
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\bin\Debug\SpeedTests.pdb
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\obj\x86\Debug\SpeedTests.csprojResolveAssemblyReference.cache
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\obj\x86\Debug\SpeedTests.exe
+D:\Joro\GIT_Automations\AutomationSpeedTests\SpeedTests\SpeedTests\obj\x86\Debug\SpeedTests.pdb

@@ -1,0 +1,118 @@
+﻿<repository
+id="a6b21130-8b8e-4aec-a001-93daa63209cb"
+name="SpeedTestsRepository"
+rxversion="7.0">
+	<codegen
+	classname="SpeedTestsRepository"
+	namespace="SpeedTests">
+	</codegen>
+	<rootfolder
+	capname="unknown"
+	id="f576162f-f336-45e8-b069-ccfbe6b9efbc"
+	isrooted="True"
+	name="Root"
+	searchtimeout="0ms"
+	usecache="True">
+		<appfolder
+		addcaps="form,nativewindow"
+		capname="form"
+		id="fba33c25-8c4b-40d7-9138-93af7c3ad7b6"
+		isrooted="True"
+		name="SnapXUntitled"
+		refpath="/form[@title='Snap-X - [Untitled]']"
+		searchtimeout="30000ms"
+		usecache="True">
+			<item
+			addcaps="titlebar,accessible"
+			capname="titlebar"
+			id="db7aafa7-e18d-40aa-8b9f-4beccd9956b0"
+			name="TitleBar"
+			refimgid="7a610ec7-3e80-4b34-9442-2e71db1cf974"
+			refpath="/form[@title='Snap-X - [Untitled]']/titlebar[@accessiblerole='TitleBar']"
+			searchtimeout="30000ms">
+				/form[@title='Snap-X - [Untitled]']/titlebar[@accessiblerole='TitleBar']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="f7b05518-65b8-4d1a-b3d0-ef4b40182a53"
+			name="ButtonOK"
+			refimgid="17a1026e-bc86-4de0-9a17-c67cc4c9265a"
+			searchtimeout="30000ms">
+				/form[@title='Snap-X - [Untitled]']/container/form//button[@text='&amp;OK']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="fdde19aa-2930-49b2-b57f-e7ed19b7f556"
+			name="ReMeasure"
+			refimgid="c60b6ceb-fdec-4332-b73e-529bd6a4b5be"
+			searchtimeout="30000ms">
+				/form[@title='Snap-X - [Untitled]']/container/form/?/?/element/element/container/button[@text='Re-Measure' and @accessiblestate='Focusable']
+			</item>
+			<item
+			addcaps="button,nativewindow"
+			capname="button"
+			id="5274fe14-9b92-4e07-9dbc-ece5afef7527"
+			name="Finish"
+			refimgid="e55db731-2254-487d-814b-4bbe948d11f2"
+			searchtimeout="30000ms">
+				/form[@title='Snap-X - [Untitled]']/container/form/?/?/element/element/container/button[@text='Finish' and @accessiblestate='Default, Focusable']
+			</item>
+			<basepath>
+				/form[@title='Snap-X - [Untitled]']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAGqSURBVDhPjVM9SwNBEF2/EcUuaJLdvd1LqihY
+BBFtRPAfWKkgWNpZqKUpLARLCzEggk0gweQuKURtBCsFwcJGsRLsLAQFBRXju73R3MUoPnjs3bx5
+s7Ozd+wLTlxPukJX/+AGpX4jm0630SNjGcaaHaGvGhgNHa6O8n3JiMv1DLiF2IUj1BvZfRixgdmQ
+q1es7/67OnOEtVCWUpPVR4GxFojXISPR4foFG2TLItFP6Y1REno+ZESbnrEoZZRSfofL7TkkP9QK
+qMtiXA2S/AOFVKrdf4ikurFTsW7nnf1kssMkEA57e7twlGlwFwNfrXA9xPKcd2JAJ2GzXiePwZ6U
+NrrZRtFHrDnHshRJXttqM2gGD6qMNXmat0JfQuzZaNjImIKAQFfjs8jtAZK84pmghs7uSKohlICr
+orAB2p0N6h4xlx6SfaDqRygpbo2TxI7ZWCvOfRPUHZlIk+wDn+hauIh6Qmy5ErWlp9d3UeL2lDEG
+gaqjZrpC3QeT8X6L4qfBGOayQrbGcIWIlWLWiCv1hGFcDaOjxVoRlaPU/8ObBYz+P8LVOYUBxj4B
+q6oLt3Pkl98AAAAASUVORK5CYII=
+			</icon>
+		</appfolder>
+		<appfolder
+		addcaps="form,nativewindow"
+		capname="form"
+		id="1b207ee9-47bc-4776-9e09-babd5b1318ab"
+		isrooted="True"
+		name="OpenSnapXRoutine"
+		refpath="/form[@title='Open Snap-X Routine']"
+		searchtimeout="30000ms"
+		usecache="True">
+			<item
+			addcaps="text,nativewindow"
+			capname="text"
+			id="4ffde906-5caa-4e1f-9916-cde343dfc1a1"
+			name="FileNameField"
+			refimgid="3e2633b2-863c-48ac-bf0e-3eb750f52453"
+			refpath="/form[@title='Open Snap-X Routine']/combobox[@controlid='1148']/text[@controlid='1148']"
+			searchtimeout="30000ms">
+				/form[@title='Open Snap-X Routine']/?/?/text[@controlid='1148']
+			</item>
+			<basepath>
+				/form[@title='Open Snap-X Routine']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAGqSURBVDhPjVM9SwNBEF2/EcUuaJLdvd1LqihY
+BBFtRPAfWKkgWNpZqKUpLARLCzEggk0gweQuKURtBCsFwcJGsRLsLAQFBRXju73R3MUoPnjs3bx5
+s7Ozd+wLTlxPukJX/+AGpX4jm0630SNjGcaaHaGvGhgNHa6O8n3JiMv1DLiF2IUj1BvZfRixgdmQ
+q1es7/67OnOEtVCWUpPVR4GxFojXISPR4foFG2TLItFP6Y1REno+ZESbnrEoZZRSfofL7TkkP9QK
+qMtiXA2S/AOFVKrdf4ikurFTsW7nnf1kssMkEA57e7twlGlwFwNfrXA9xPKcd2JAJ2GzXiePwZ6U
+NrrZRtFHrDnHshRJXttqM2gGD6qMNXmat0JfQuzZaNjImIKAQFfjs8jtAZK84pmghs7uSKohlICr
+orAB2p0N6h4xlx6SfaDqRygpbo2TxI7ZWCvOfRPUHZlIk+wDn+hauIh6Qmy5ErWlp9d3UeL2lDEG
+gaqjZrpC3QeT8X6L4qfBGOayQrbGcIWIlWLWiCv1hGFcDaOjxVoRlaPU/8ObBYz+P8LVOYUBxj4B
+q6oLt3Pkl98AAAAASUVORK5CYII=
+			</icon>
+		</appfolder>
+		<basepath>
+		</basepath>
+	</rootfolder>
+	<variables>
+	</variables>
+</repository>

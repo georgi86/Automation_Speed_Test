@@ -30,6 +30,10 @@ namespace SpeedTests
         SpeedTestsRepositoryFolders.SnapXUntitledAppFolder _snapxuntitled;
         SpeedTestsRepositoryFolders.OpenSnapXRoutineAppFolder _opensnapxroutine;
         SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder _elapsedtimeoneprtnotepad;
+        SpeedTestsRepositoryFolders.ElapsedTimeTwoPRTNotepadAppFolder _elapsedtimetwoprtnotepad;
+        SpeedTestsRepositoryFolders.ElapsedTimeThreePRTNotepadAppFolder _elapsedtimethreeprtnotepad;
+        SpeedTestsRepositoryFolders.ElapsedTimeFourPRTNotepadAppFolder _elapsedtimefourprtnotepad;
+        SpeedTestsRepositoryFolders.ElapsedTimeFivePRTNotepadAppFolder _elapsedtimefiveprtnotepad;
 
         /// <summary>
         /// Gets the singleton class instance representing the SpeedTestsRepository element repository.
@@ -49,6 +53,10 @@ namespace SpeedTests
             _snapxuntitled = new SpeedTestsRepositoryFolders.SnapXUntitledAppFolder(this);
             _opensnapxroutine = new SpeedTestsRepositoryFolders.OpenSnapXRoutineAppFolder(this);
             _elapsedtimeoneprtnotepad = new SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder(this);
+            _elapsedtimetwoprtnotepad = new SpeedTestsRepositoryFolders.ElapsedTimeTwoPRTNotepadAppFolder(this);
+            _elapsedtimethreeprtnotepad = new SpeedTestsRepositoryFolders.ElapsedTimeThreePRTNotepadAppFolder(this);
+            _elapsedtimefourprtnotepad = new SpeedTestsRepositoryFolders.ElapsedTimeFourPRTNotepadAppFolder(this);
+            _elapsedtimefiveprtnotepad = new SpeedTestsRepositoryFolders.ElapsedTimeFivePRTNotepadAppFolder(this);
         }
 
 #region Variables
@@ -92,6 +100,42 @@ namespace SpeedTests
         public virtual SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder ElapsedTimeOnePRTNotepad
         {
             get { return _elapsedtimeoneprtnotepad; }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeTwoPRTNotepad folder.
+        /// </summary>
+        [RepositoryFolder("09023e9a-b1bd-440d-879f-fff7ee22b169")]
+        public virtual SpeedTestsRepositoryFolders.ElapsedTimeTwoPRTNotepadAppFolder ElapsedTimeTwoPRTNotepad
+        {
+            get { return _elapsedtimetwoprtnotepad; }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeThreePRTNotepad folder.
+        /// </summary>
+        [RepositoryFolder("85e82a84-9beb-4e52-9c12-45640b70140f")]
+        public virtual SpeedTestsRepositoryFolders.ElapsedTimeThreePRTNotepadAppFolder ElapsedTimeThreePRTNotepad
+        {
+            get { return _elapsedtimethreeprtnotepad; }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeFourPRTNotepad folder.
+        /// </summary>
+        [RepositoryFolder("a252e5ec-a091-4ba1-b59e-5cc7023b851a")]
+        public virtual SpeedTestsRepositoryFolders.ElapsedTimeFourPRTNotepadAppFolder ElapsedTimeFourPRTNotepad
+        {
+            get { return _elapsedtimefourprtnotepad; }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeFivePRTNotepad folder.
+        /// </summary>
+        [RepositoryFolder("ac83621c-6291-4e3f-872e-5fc266d25644")]
+        public virtual SpeedTestsRepositoryFolders.ElapsedTimeFivePRTNotepadAppFolder ElapsedTimeFivePRTNotepad
+        {
+            get { return _elapsedtimefiveprtnotepad; }
         }
     }
 
@@ -368,6 +412,270 @@ namespace SpeedTests
             /// The Text15 item info.
             /// </summary>
             [RepositoryItemInfo("f2ef2c69-f0e7-4e31-ae76-6155a6c3d5f2")]
+            public virtual RepoItemInfo Text15Info
+            {
+                get
+                {
+                    return _text15Info;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeTwoPRTNotepadAppFolder folder.
+        /// </summary>
+        [RepositoryFolder("09023e9a-b1bd-440d-879f-fff7ee22b169")]
+        public partial class ElapsedTimeTwoPRTNotepadAppFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _text15Info;
+
+            /// <summary>
+            /// Creates a new ElapsedTimeTwoPRTNotepad  folder.
+            /// </summary>
+            public ElapsedTimeTwoPRTNotepadAppFolder(RepoGenBaseFolder parentFolder) :
+                    base("ElapsedTimeTwoPRTNotepad", "/form[@title~'^ElapsedTimeTwo\\.PRT\\ -\\ Note']", parentFolder, 30000, null, true, "09023e9a-b1bd-440d-879f-fff7ee22b169", "")
+            {
+                _text15Info = new RepoItemInfo(this, "Text15", "text[@controlid='15']", 30000, null, "011d1101-5bec-43a3-bc04-83467971ab65");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("09023e9a-b1bd-440d-879f-fff7ee22b169")]
+            public virtual Ranorex.Form Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.Form>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("09023e9a-b1bd-440d-879f-fff7ee22b169")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item.
+            /// </summary>
+            [RepositoryItem("011d1101-5bec-43a3-bc04-83467971ab65")]
+            public virtual Ranorex.Text Text15
+            {
+                get
+                {
+                    return _text15Info.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item info.
+            /// </summary>
+            [RepositoryItemInfo("011d1101-5bec-43a3-bc04-83467971ab65")]
+            public virtual RepoItemInfo Text15Info
+            {
+                get
+                {
+                    return _text15Info;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeThreePRTNotepadAppFolder folder.
+        /// </summary>
+        [RepositoryFolder("85e82a84-9beb-4e52-9c12-45640b70140f")]
+        public partial class ElapsedTimeThreePRTNotepadAppFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _text15Info;
+
+            /// <summary>
+            /// Creates a new ElapsedTimeThreePRTNotepad  folder.
+            /// </summary>
+            public ElapsedTimeThreePRTNotepadAppFolder(RepoGenBaseFolder parentFolder) :
+                    base("ElapsedTimeThreePRTNotepad", "/form[@title~'^ElapsedTimeThree\\.PRT\\ -\\ No']", parentFolder, 30000, null, true, "85e82a84-9beb-4e52-9c12-45640b70140f", "")
+            {
+                _text15Info = new RepoItemInfo(this, "Text15", "text[@controlid='15']", 30000, null, "87a0d916-3bd5-45c0-b37c-dae91a1ea035");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("85e82a84-9beb-4e52-9c12-45640b70140f")]
+            public virtual Ranorex.Form Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.Form>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("85e82a84-9beb-4e52-9c12-45640b70140f")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item.
+            /// </summary>
+            [RepositoryItem("87a0d916-3bd5-45c0-b37c-dae91a1ea035")]
+            public virtual Ranorex.Text Text15
+            {
+                get
+                {
+                    return _text15Info.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item info.
+            /// </summary>
+            [RepositoryItemInfo("87a0d916-3bd5-45c0-b37c-dae91a1ea035")]
+            public virtual RepoItemInfo Text15Info
+            {
+                get
+                {
+                    return _text15Info;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeFourPRTNotepadAppFolder folder.
+        /// </summary>
+        [RepositoryFolder("a252e5ec-a091-4ba1-b59e-5cc7023b851a")]
+        public partial class ElapsedTimeFourPRTNotepadAppFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _text15Info;
+
+            /// <summary>
+            /// Creates a new ElapsedTimeFourPRTNotepad  folder.
+            /// </summary>
+            public ElapsedTimeFourPRTNotepadAppFolder(RepoGenBaseFolder parentFolder) :
+                    base("ElapsedTimeFourPRTNotepad", "/form[@title~'^ElapsedTimeFour\\.PRT\\ -\\ Not']", parentFolder, 30000, null, true, "a252e5ec-a091-4ba1-b59e-5cc7023b851a", "")
+            {
+                _text15Info = new RepoItemInfo(this, "Text15", "text[@controlid='15']", 30000, null, "ec3ba7dd-1a67-4b87-b4a8-f67d9f145c8b");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("a252e5ec-a091-4ba1-b59e-5cc7023b851a")]
+            public virtual Ranorex.Form Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.Form>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("a252e5ec-a091-4ba1-b59e-5cc7023b851a")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item.
+            /// </summary>
+            [RepositoryItem("ec3ba7dd-1a67-4b87-b4a8-f67d9f145c8b")]
+            public virtual Ranorex.Text Text15
+            {
+                get
+                {
+                    return _text15Info.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item info.
+            /// </summary>
+            [RepositoryItemInfo("ec3ba7dd-1a67-4b87-b4a8-f67d9f145c8b")]
+            public virtual RepoItemInfo Text15Info
+            {
+                get
+                {
+                    return _text15Info;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The ElapsedTimeFivePRTNotepadAppFolder folder.
+        /// </summary>
+        [RepositoryFolder("ac83621c-6291-4e3f-872e-5fc266d25644")]
+        public partial class ElapsedTimeFivePRTNotepadAppFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _text15Info;
+
+            /// <summary>
+            /// Creates a new ElapsedTimeFivePRTNotepad  folder.
+            /// </summary>
+            public ElapsedTimeFivePRTNotepadAppFolder(RepoGenBaseFolder parentFolder) :
+                    base("ElapsedTimeFivePRTNotepad", "/form[@title~'^ElapsedTimeFive\\.PRT\\ -\\ Not']", parentFolder, 30000, null, true, "ac83621c-6291-4e3f-872e-5fc266d25644", "")
+            {
+                _text15Info = new RepoItemInfo(this, "Text15", "text[@controlid='15']", 30000, null, "1246af0d-069d-470f-a2a6-714bdb44d84b");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("ac83621c-6291-4e3f-872e-5fc266d25644")]
+            public virtual Ranorex.Form Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.Form>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("ac83621c-6291-4e3f-872e-5fc266d25644")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item.
+            /// </summary>
+            [RepositoryItem("1246af0d-069d-470f-a2a6-714bdb44d84b")]
+            public virtual Ranorex.Text Text15
+            {
+                get
+                {
+                    return _text15Info.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Text15 item info.
+            /// </summary>
+            [RepositoryItemInfo("1246af0d-069d-470f-a2a6-714bdb44d84b")]
             public virtual RepoItemInfo Text15Info
             {
                 get

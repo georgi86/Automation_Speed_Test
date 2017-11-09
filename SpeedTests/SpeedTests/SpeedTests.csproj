@@ -67,6 +67,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFive.cs">
+      <BoundTo>374c3922-2c71-46cb-9d08-71fd592f7f2d</BoundTo>
+      <DependentUpon>ActionFive.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>87ff7ed0-d5a2-4046-907c-bb3a799d2fc0</id>
+    </Compile>
+    <Compile Include="ActionFive.UserCode.cs">
+      <BoundTo>374c3922-2c71-46cb-9d08-71fd592f7f2d</BoundTo>
+      <DependentUpon>ActionFive.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>10862808-1c66-4d1d-9e24-7bcc82a4f0d1</id>
+    </Compile>
+    <Compile Include="ActionFour.cs">
+      <BoundTo>5f02926e-d2f3-4373-82a6-89b6a33c3603</BoundTo>
+      <DependentUpon>ActionFour.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>317ecdf6-d353-4cf0-8b28-0baf5a33a6a7</id>
+    </Compile>
+    <Compile Include="ActionFour.UserCode.cs">
+      <BoundTo>5f02926e-d2f3-4373-82a6-89b6a33c3603</BoundTo>
+      <DependentUpon>ActionFour.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>b9c6a6c9-aff0-4286-8e40-82f02be95c26</id>
+    </Compile>
+    <Compile Include="ActionThree.cs">
+      <BoundTo>ff9a87cc-0d63-4404-af44-49364c9fa20b</BoundTo>
+      <DependentUpon>ActionThree.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>9084ac41-74f5-4a4d-a989-46010d9c846d</id>
+    </Compile>
+    <Compile Include="ActionThree.UserCode.cs">
+      <BoundTo>ff9a87cc-0d63-4404-af44-49364c9fa20b</BoundTo>
+      <DependentUpon>ActionThree.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>7fc05f60-86cb-499a-8af6-30402c852473</id>
+    </Compile>
     <Compile Include="ActionTwo.cs">
       <BoundTo>8404b519-70be-4326-92d2-470f8467100a</BoundTo>
       <DependentUpon>ActionTwo.rxrec</DependentUpon>
@@ -105,6 +141,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ActionFive.rxrec">
+      <BoundTo>ff08158d-6c7e-4fb5-95ff-02ff0890a742</BoundTo>
+      <id>374c3922-2c71-46cb-9d08-71fd592f7f2d</id>
+      <recordtableid>4e570092-f82b-4882-88ca-ecfee775d22d</recordtableid>
+    </None>
+    <None Include="ActionFour.rxrec">
+      <BoundTo>ff08158d-6c7e-4fb5-95ff-02ff0890a742</BoundTo>
+      <id>5f02926e-d2f3-4373-82a6-89b6a33c3603</id>
+      <recordtableid>a6215fe9-63b3-4b9b-9bef-4b8a01cc3943</recordtableid>
+    </None>
+    <None Include="ActionThree.rxrec">
+      <BoundTo>ff08158d-6c7e-4fb5-95ff-02ff0890a742</BoundTo>
+      <id>ff9a87cc-0d63-4404-af44-49364c9fa20b</id>
+      <recordtableid>62cb300e-01af-40a5-8688-a9275b16cd9d</recordtableid>
+    </None>
     <None Include="ActionTwo.rxrec">
       <BoundTo>ff08158d-6c7e-4fb5-95ff-02ff0890a742</BoundTo>
       <id>8404b519-70be-4326-92d2-470f8467100a</id>

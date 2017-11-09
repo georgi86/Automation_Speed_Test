@@ -1250,7 +1250,7 @@ igBKKKKAP//Z
 		button="Left"
 		duration="500ms"
 		enabled="True"
-		loc="72;10"
+		loc="Center"
 		movetime="300ms"
 		optional="False"
 		searchpropertyid="d415b5dc-4bde-4c9d-9a92-a931b5f2875e"
@@ -1543,6 +1543,7 @@ AMc/+JpfPX0f/wAc/wDiaKKOZj+r0+wnnL6P/wCOf/E0UUUczF9Wpdj/2Q==
 		waitaction="Exists"
 		waittimeout="240000ms">
 			<comment>
+				This step waits for Remeasure button to becomes an active. To do that you need to check this butto to has not only the text but also to have and accessiblestate(Focusable)
 			</comment>
 			<bindings>
 			</bindings>
@@ -1911,19 +1912,28 @@ Diameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.00
 			<bindings>
 			</bindings>
 			<info
-			id="3df79756-6573-4060-af5c-1c0b3eb9011b"
+			id="f2ef2c69-f0e7-4e31-ae76-6155a6c3d5f2"
 			sourcename="ItemRecorderEditor">
 				<path>
-					/form[@title~'^ElapsedTimeOne\.PRT\ -\ Note']
+					/form[@title~'^ElapsedTimeOne\.PRT\ -\ Note']/text[@controlid='15']
 				</path>
 			</info>
 		</closeapprecorditem>
+		<explicitdelayitem
+		duration="4000ms"
+		enabled="True"
+		optional="False">
+			<comment>
+			</comment>
+			<bindings>
+			</bindings>
+		</explicitdelayitem>
 		<mouseitem
 		action="Click"
 		button="Left"
 		duration="500ms"
 		enabled="True"
-		loc="43;10"
+		loc="Center"
 		movetime="300ms"
 		optional="False"
 		searchpropertyid="f8f4c43f-bb19-4276-8978-732351b9d4e5"
@@ -2571,19 +2581,28 @@ Diameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.00
 			<bindings>
 			</bindings>
 			<info
-			id="3df79756-6573-4060-af5c-1c0b3eb9011b"
+			id="f2ef2c69-f0e7-4e31-ae76-6155a6c3d5f2"
 			sourcename="ItemRecorderEditor">
 				<path>
-					/form[@title~'^ElapsedTimeOne\.PRT\ -\ Note']
+					/form[@title~'^ElapsedTimeOne\.PRT\ -\ Note']/text[@controlid='15']
 				</path>
 			</info>
 		</closeapprecorditem>
+		<explicitdelayitem
+		duration="4000ms"
+		enabled="True"
+		optional="False">
+			<comment>
+			</comment>
+			<bindings>
+			</bindings>
+		</explicitdelayitem>
 		<mouseitem
 		action="Click"
 		button="Left"
 		duration="500ms"
 		enabled="True"
-		loc="42;11"
+		loc="Center"
 		movetime="300ms"
 		optional="False"
 		searchpropertyid="5a74c7a4-ffc9-4a57-8ee5-beac47371193"
@@ -2852,6 +2871,15 @@ nUep6OEinB3XUmhmnYF3nl2g4wGOWPpVmUXMSBplmiQ/xiUnH1FFFJbFVGlNK25SlmuUdkaZ8j/a
 NFFFTc3jGLV7H//Z
 			</helperscreenshot>
 		</mouseitem>
+		<explicitdelayitem
+		duration="4000ms"
+		enabled="True"
+		optional="False">
+			<comment>
+			</comment>
+			<bindings>
+			</bindings>
+		</explicitdelayitem>
 	</recorditems>
 	<repository
 	id="a6b21130-8b8e-4aec-a001-93daa63209cb"

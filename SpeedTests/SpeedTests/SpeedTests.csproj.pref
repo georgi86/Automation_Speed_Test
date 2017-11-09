@@ -1,12 +1,12 @@
 ﻿<Properties>
   <Array name="active">
-    <Element value="ActionOne.rxrec" />
+    <Element value="SpeedTests.rxtst" />
   </Array>
   <Array name="bookmarks" />
   <Array name="files">
     <Element value="SpeedTests.rxtst" />
-    <Element value="ActionOne.rxrec" />
-    <Element value="ActionTwo.rxrec" />
+    <Element value="ActionFive.rxrec" />
+    <Element value="ActionFour.rxrec" />
   </Array>
   <Properties name="projectSavedData">
     <Properties name="customTool">

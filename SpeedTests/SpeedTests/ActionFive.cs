@@ -73,8 +73,8 @@ namespace SpeedTests
         [System.CodeDom.Compiler.GeneratedCode("Ranorex", "7.0")]
         void ITestModule.Run()
         {
-            Mouse.DefaultMoveTime = 300;
-            Keyboard.DefaultKeyPressTime = 100;
+            Mouse.DefaultMoveTime = 400;
+            Keyboard.DefaultKeyPressTime = 200;
             Delay.SpeedFactor = 1.00;
 
             Init();

@@ -64,6 +64,101 @@ namespace SpeedTests
             TestModuleRunner.Run(Instance);
         }
 
+/// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        private static bool IsZero(double dExpression, double EPSILONE)
+        {
+            return System.Math.Abs(dExpression) < EPSILONE;
+        }
+
+        private static bool IsEQ(double first, double second, double EPSILONE)
+        {
+            return IsZero(first - second, EPSILONE);
+        }
+
+        private static void RunPositiveResult(int ActualTime )
+        {
+            string ActualValue = "Actual Value is: " + ActualTime;
+            Ranorex.Report.Error("Sucessfully Performed: ", ActualValue);
+        }
+
+        private static void RunNegativeResult(int nActualTime, int nHardcodedTime, int nErrorLine)
+        {
+
+            string errLine = "Error on line: " + (nErrorLine + 1);
+            Ranorex.Report.Error("SLOW DOWN: ", errLine);
+
+            string ActualValue = "Actual Value is: " + nActualTime;
+            Ranorex.Report.Error("SLOW DOWN: ", ActualValue);
+
+            string HardcodedValue = "Hardcoded value is: " + nHardcodedTime;
+            Ranorex.Report.Error("SLOW DOWN: ", HardcodedValue);
+
+
+            //string errLine = "Error on line: " + (nErrorLine + 1);
+            //Ranorex.Report.Error("Validation", errLine);
+            //errLine = "Actual value is " + nActualTime;
+            //Ranorex.Report.Error("Actual Value is ", errLine);
+
+            //errLine = "Hardcoded value is " + nHardcodedTime;
+            //Ranorex.Report.Error("Expected Value is ", errLine);
+        }
+
+       private static void RunEx(int iHardcodedInParam, string ResultRoutineOneInParam)
+        {
+            string ResultRoutineOne = ResultRoutineOneInParam; // ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
+
+            string[] ReadResultRoutineOne = Regex.Split(ResultRoutineOne, "[\r\n]+");
+
+            int iNumResultRows = ReadResultRoutineOne.Length;
+
+            string HardcodedResultOne = "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n";
+
+            string[] HardcodedReadResultOne = Regex.Split(HardcodedResultOne, "[\r\n]+");
+
+            int iNumhardcodedResultRow = HardcodedReadResultOne.Length;
+
+            int HardcodedTime = iHardcodedInParam; // 25; // this is the expected time. With this time we compare the actual time
+          
+            
+                for (int i = iNumResultRows-1; i>=0; i--) //this for method will work in revers order 
+
+                {
+                bool bExpectedTextRow = ReadResultRoutineOne[i].Contains("END OF INSPECTION");
+                if (bExpectedTextRow)
+                {
+                    string sFinalInspection = ReadResultRoutineOne[i];
+
+                    string toSearch = ":";  //This will give the first postion of the : symbol. We assume, that there will be two such symbols in the whole string //- one between the hour and the minutes, and one between the minutes and the seconds
+
+                    int idxHourMinute = sFinalInspection.IndexOf(toSearch);
+
+                    string hours = new string(sFinalInspection.ToCharArray(idxHourMinute - 2, 2));    //Offset backwards with two sympols, because we found the position of : character. The second digit (2) means how many digits to take
+
+                    string minutes = new string(sFinalInspection.ToCharArray(idxHourMinute + 1, 2));
+
+                    string seconds = new string(sFinalInspection.ToCharArray(idxHourMinute + 4, 2));        //We offset with 4, because of the second : character
+
+                    int hh = 0;
+                    int mm = 0;
+                    int ss = 0;
+                    int.TryParse(hours, out hh);
+                    int.TryParse(minutes, out mm);
+                    int.TryParse(seconds, out ss);
+                    int ActualTime = (3600 * hh) + (60 * mm) + ss;
+
+                    if (IsEQ(ActualTime, HardcodedTime, 6))
+                    {
+                        RunPositiveResult(ActualTime);
+                    }
+
+                    else
+                        RunNegativeResult(ActualTime, HardcodedTime, i);
+                }
+            } // for (int i = 0; i < iNumResultRows; i++)
+        }
+
         /// <summary>
         /// Performs the playback of actions in this recording.
         /// </summary>
@@ -71,6 +166,8 @@ namespace SpeedTests
         /// instance to the <see cref="TestModuleRunner.Run(ITestModule)"/> method
         /// that will in turn invoke this method.</remarks>
         [System.CodeDom.Compiler.GeneratedCode("Ranorex", "7.0")]
+
+
         void ITestModule.Run()
         {
             Mouse.DefaultMoveTime = 400;
@@ -141,13 +238,22 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeOnePRTNotepad'.", repo.ElapsedTimeOnePRTNotepad.SelfInfo, new RecordItemIndex(15));
             repo.ElapsedTimeOnePRTNotepad.Self.Maximize();
-            Delay.Milliseconds(100);
+            Delay.Milliseconds(100);            
+          
+            Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(16));
+                        
+
+            ////////////Function///////////////
+        
+            int iHardcodedInParam = 25;
+            string ResultRoutineOneInParam = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
+
+            RunEx(iHardcodedInParam, ResultRoutineOneInParam);
             
-            try {
-                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(16));
-                Validate.Attribute(repo.ElapsedTimeOnePRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n", Validate.DefaultMessage, false);
-                Delay.Milliseconds(100);
-            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(16)); }
+            ////////////////////////////////////
+
+
+            Delay.Milliseconds(100);            
             
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(17));
             Host.Current.CloseApplication(repo.ElapsedTimeOnePRTNotepad.Text15, new Duration(0));
@@ -171,11 +277,20 @@ namespace SpeedTests
             repo.ElapsedTimeOnePRTNotepad.Self.Maximize();
             Delay.Milliseconds(100);
             
-            try {
-                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(23));
-                Validate.Attribute(repo.ElapsedTimeOnePRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n", Validate.DefaultMessage, false);
-                Delay.Milliseconds(100);
-            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(23)); }
+            Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(23));
+
+            
+            //////////////////////////////////////////////////////////////////
+            
+
+            iHardcodedInParam = 25;
+
+            string ResultRemeasureRoutineOne = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
+
+            RunEx(iHardcodedInParam, ResultRoutineOneInParam);
+            
+
+            Delay.Milliseconds(1000);            
             
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeOnePRTNotepad.Text15'.", repo.ElapsedTimeOnePRTNotepad.Text15Info, new RecordItemIndex(24));
             Host.Current.CloseApplication(repo.ElapsedTimeOnePRTNotepad.Text15, new Duration(0));

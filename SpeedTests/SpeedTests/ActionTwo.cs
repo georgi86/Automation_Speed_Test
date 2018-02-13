@@ -19,6 +19,8 @@ using Ranorex;
 using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
+using UtilityFunctions;
+
 
 namespace SpeedTests
 {
@@ -141,19 +143,18 @@ namespace SpeedTests
             Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeTwoPRTNotepad'.", repo.ElapsedTimeTwoPRTNotepad.SelfInfo, new RecordItemIndex(15));
             repo.ElapsedTimeTwoPRTNotepad.Self.Maximize();
             Delay.Milliseconds(100);
-            
-            try {
-                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedTwo.mxy                                             1      Thursday, November 09, 2017 11:28:41\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3130       +6.3119       +1.0000     -1.0000    -0.0011      -           \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:47 ============================\r\n') on item 'ElapsedTimeTwoPRTNotepad.Text15'.", repo.ElapsedTimeTwoPRTNotepad.Text15Info, new RecordItemIndex(16));
-                Validate.Attribute(repo.ElapsedTimeTwoPRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedTwo.mxy                                             1      Thursday, November 09, 2017 11:28:41\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3130       +6.3119       +1.0000     -1.0000    -0.0011      -           \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:47 ============================\r\n", Validate.DefaultMessage, false);
-                Delay.Milliseconds(100);
-            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(16)); }
-            
+
+            int iHardcodedResultTwo = 40;
+            string ResultRoutineTwo = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeTwoPRTNotepadAppFolder)repo.ElapsedTimeTwoPRTNotepad.SelfInfo.ParentFolder).Text15.TextValue;
+            UtilityRun.RunEx(iHardcodedResultTwo, ResultRoutineTwo);
+                        
+
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeTwoPRTNotepad.Text15'.", repo.ElapsedTimeTwoPRTNotepad.Text15Info, new RecordItemIndex(17));
             Host.Current.CloseApplication(repo.ElapsedTimeTwoPRTNotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(18));
-            Delay.Duration(4000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(18));
+            Delay.Duration(6000, false);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ReMeasure' at Center.", repo.SnapXUntitled.ReMeasureInfo, new RecordItemIndex(19));
             repo.SnapXUntitled.ReMeasure.Click();
@@ -169,26 +170,27 @@ namespace SpeedTests
             Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeTwoPRTNotepad'.", repo.ElapsedTimeTwoPRTNotepad.SelfInfo, new RecordItemIndex(22));
             repo.ElapsedTimeTwoPRTNotepad.Self.Maximize();
             Delay.Milliseconds(100);
-            
-            try {
-                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedTwo.mxy                                             1      Thursday, November 09, 2017 11:28:41\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3130       +6.3119       +1.0000     -1.0000    -0.0011      -           \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:47 ============================\r\n') on item 'ElapsedTimeTwoPRTNotepad.Text15'.", repo.ElapsedTimeTwoPRTNotepad.Text15Info, new RecordItemIndex(23));
-                Validate.Attribute(repo.ElapsedTimeTwoPRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedTwo.mxy                                             1      Thursday, November 09, 2017 11:28:41\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3130       +6.3119       +1.0000     -1.0000    -0.0011      -           \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:47 ============================\r\n", Validate.DefaultMessage, false);
-                Delay.Milliseconds(100);
-            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(23)); }
-            
+
+
+
+            iHardcodedResultTwo = 40;
+            string ResultRemeasureRoutineTwo = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeTwoPRTNotepadAppFolder)repo.ElapsedTimeTwoPRTNotepad.SelfInfo.ParentFolder).Text15.TextValue;
+            UtilityRun.RunEx(iHardcodedResultTwo, ResultRemeasureRoutineTwo);
+
+
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeTwoPRTNotepad.Text15'.", repo.ElapsedTimeTwoPRTNotepad.Text15Info, new RecordItemIndex(24));
             Host.Current.CloseApplication(repo.ElapsedTimeTwoPRTNotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(25));
-            Delay.Duration(4000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(25));
+            Delay.Duration(6000, false);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.Finish' at Center.", repo.SnapXUntitled.FinishInfo, new RecordItemIndex(26));
             repo.SnapXUntitled.Finish.Click();
             Delay.Milliseconds(200);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(27));
-            Delay.Duration(4000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(27));
+            Delay.Duration(6000, false);
             
         }
 

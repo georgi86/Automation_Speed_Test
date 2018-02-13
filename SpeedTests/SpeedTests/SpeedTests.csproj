@@ -139,6 +139,7 @@
       <RepositoryCode>true</RepositoryCode>
       <id>ab9d93fa-f02d-4ef0-9994-9fab6416a823</id>
     </Compile>
+    <Compile Include="UtiliyFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ActionFive.rxrec">

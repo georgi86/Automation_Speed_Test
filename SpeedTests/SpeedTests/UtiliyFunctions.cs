@@ -44,9 +44,9 @@ namespace UtilityFunctions
 
     public class UtilityRun
     {
-        public static void RunEx(int iHardcodedInParam, string ResultRoutineOneInParam)
+        public static void RunEx(int iHardcodedInParam, string ResultRoutineInParam)
         {
-            string ResultRoutineOne = ResultRoutineOneInParam; // ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
+            string ResultRoutineOne = ResultRoutineInParam; // ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
 
             string[] ReadResultRoutineOne = Regex.Split(ResultRoutineOne, "[\r\n]+");
 
@@ -87,7 +87,7 @@ namespace UtilityFunctions
                     int.TryParse(seconds, out ss);
                     int ActualTime = (3600 * hh) + (60 * mm) + ss;
 
-                    if (Mathematics.IsEQ(ActualTime, HardcodedTime, 6))
+                    if (Mathematics.IsEQ(ActualTime, HardcodedTime, 8))
                     {
                         ReportAction.RunPositiveResult(ActualTime);
                     }

@@ -144,17 +144,17 @@ namespace SpeedTests
             repo.ElapsedTimeTwoPRTNotepad.Self.Maximize();
             Delay.Milliseconds(100);
 
-            int iHardcodedResultTwo = 40;
+            int iHardcodedTwo = 36;
             string ResultRoutineTwo = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeTwoPRTNotepadAppFolder)repo.ElapsedTimeTwoPRTNotepad.SelfInfo.ParentFolder).Text15.TextValue;
-            UtilityRun.RunEx(iHardcodedResultTwo, ResultRoutineTwo);
+            UtilityRun.RunEx(iHardcodedTwo, ResultRoutineTwo);
                         
 
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeTwoPRTNotepad.Text15'.", repo.ElapsedTimeTwoPRTNotepad.Text15Info, new RecordItemIndex(17));
             Host.Current.CloseApplication(repo.ElapsedTimeTwoPRTNotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(18));
-            Delay.Duration(6000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(18));
+            Delay.Duration(4000, false);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ReMeasure' at Center.", repo.SnapXUntitled.ReMeasureInfo, new RecordItemIndex(19));
             repo.SnapXUntitled.ReMeasure.Click();
@@ -173,17 +173,17 @@ namespace SpeedTests
 
 
 
-            iHardcodedResultTwo = 40;
+            iHardcodedTwo = 36;
             string ResultRemeasureRoutineTwo = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeTwoPRTNotepadAppFolder)repo.ElapsedTimeTwoPRTNotepad.SelfInfo.ParentFolder).Text15.TextValue;
-            UtilityRun.RunEx(iHardcodedResultTwo, ResultRemeasureRoutineTwo);
+            UtilityRun.RunEx(iHardcodedTwo, ResultRemeasureRoutineTwo);
 
 
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeTwoPRTNotepad.Text15'.", repo.ElapsedTimeTwoPRTNotepad.Text15Info, new RecordItemIndex(24));
             Host.Current.CloseApplication(repo.ElapsedTimeTwoPRTNotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(25));
-            Delay.Duration(6000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(25));
+            Delay.Duration(4000, false);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.Finish' at Center.", repo.SnapXUntitled.FinishInfo, new RecordItemIndex(26));
             repo.SnapXUntitled.Finish.Click();

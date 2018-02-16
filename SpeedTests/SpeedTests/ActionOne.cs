@@ -153,10 +153,10 @@ namespace SpeedTests
 
             ////////////Function///////////////
         
-            int iHardcodedInParam = 25;
-            string ResultRoutineOneInParam = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
+            int iHardcodedOne = 22;
+            string ResultRoutineOne = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
 
-            UtilityRun.RunEx(iHardcodedInParam, ResultRoutineOneInParam);
+            UtilityRun.RunEx(iHardcodedOne, ResultRoutineOne);
             
             ////////////////////////////////////
 
@@ -178,8 +178,8 @@ namespace SpeedTests
 
 
 
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(18));
-            Delay.Duration(6000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(18));
+            Delay.Duration(4000, false);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ReMeasure' at Center.", repo.SnapXUntitled.ReMeasureInfo, new RecordItemIndex(19));
             repo.SnapXUntitled.ReMeasure.Click();
@@ -200,11 +200,11 @@ namespace SpeedTests
                                            
             
 
-            iHardcodedInParam = 25;
+            iHardcodedOne = 22;
 
             string ResultRemeasureRoutineOne = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeOnePRTNotepadAppFolder)repo.ElapsedTimeOnePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
 
-            UtilityRun.RunEx(iHardcodedInParam, ResultRemeasureRoutineOne);
+            UtilityRun.RunEx(iHardcodedOne, ResultRemeasureRoutineOne);
             
 
             Delay.Milliseconds(1000);            
@@ -213,8 +213,8 @@ namespace SpeedTests
             Host.Current.CloseApplication(repo.ElapsedTimeOnePRTNotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(25));
-            Delay.Duration(6000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(25));
+            Delay.Duration(4000, false);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.Finish' at Center.", repo.SnapXUntitled.FinishInfo, new RecordItemIndex(26));
             repo.SnapXUntitled.Finish.Click();

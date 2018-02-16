@@ -19,6 +19,7 @@ using Ranorex;
 using Ranorex.Core;
 using Ranorex.Core.Testing;
 using Ranorex.Core.Repository;
+using UtilityFunctions;
 
 namespace SpeedTests
 {
@@ -141,13 +142,13 @@ namespace SpeedTests
             Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeThreePRTNotepad'.", repo.ElapsedTimeThreePRTNotepad.SelfInfo, new RecordItemIndex(15));
             repo.ElapsedTimeThreePRTNotepad.Self.Maximize();
             Delay.Milliseconds(100);
-            
-            try {
-                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeThreePRTNotepad.Text15'.", repo.ElapsedTimeThreePRTNotepad.Text15Info, new RecordItemIndex(16));
-                Validate.Attribute(repo.ElapsedTimeThreePRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n", Validate.DefaultMessage, false);
-                Delay.Milliseconds(100);
-            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(16)); }
-            
+
+
+            int iHardcodedThree = 75;
+            string ResultRoutineThree = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeThreePRTNotepadAppFolder)repo.ElapsedTimeThreePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
+            UtilityRun.RunEx(iHardcodedThree, ResultRoutineThree);
+
+
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeThreePRTNotepad.Text15'.", repo.ElapsedTimeThreePRTNotepad.Text15Info, new RecordItemIndex(17));
             Host.Current.CloseApplication(repo.ElapsedTimeThreePRTNotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
@@ -164,18 +165,18 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Application", "Run application 'D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeThree.PRT' with arguments '' in normal mode.", new RecordItemIndex(21));
             Host.Local.RunApplication("D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeThree.PRT", "", "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports", false);
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeThreePRTNotepad'.", repo.ElapsedTimeThreePRTNotepad.SelfInfo, new RecordItemIndex(22));
             repo.ElapsedTimeThreePRTNotepad.Self.Maximize();
             Delay.Milliseconds(100);
-            
-            try {
-                Report.Log(ReportLevel.Info, "Validation", "(Optional Action)\r\nValidating AttributeEqual (WindowText='Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n') on item 'ElapsedTimeThreePRTNotepad.Text15'.", repo.ElapsedTimeThreePRTNotepad.Text15Info, new RecordItemIndex(23));
-                Validate.Attribute(repo.ElapsedTimeThreePRTNotepad.Text15Info, "WindowText", "Machine Serial Number:  SFD2001052                                                       Page:    1\r\n====================================================================================================\r\nRoutine Name                                                    Run #            Date & Time        \r\n====================================================================================================\r\nSpeedOne.mxy                                             1     Wednesday, November 08, 2017 17:01:10\r\n====================================================================================================\r\n\r\n====================================================================================================\r\nFeature           Unit    Nominal       Actual          Tolerances           Deviation     Exceeded \r\n====================================================================================================\r\nStep 3   \r\nDiameter          mm    +6.3129       +6.3116       +0.0000     +0.0000    -0.0013                  \r\n   \r\n====================================================================================================\r\n\r\n============================ END OF INSPECTION - Elapsed Time  00:00:23 ============================\r\n", Validate.DefaultMessage, false);
-                Delay.Milliseconds(100);
-            } catch(Exception ex) { Report.Log(ReportLevel.Warn, "Module", "(Optional Action) " + ex.Message, new RecordItemIndex(23)); }
-            
+
+
+            iHardcodedThree = 75;
+            string ResultRemeasureThree = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeThreePRTNotepadAppFolder)repo.ElapsedTimeThreePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
+            UtilityRun.RunEx(iHardcodedThree, ResultRemeasureThree);
+
+
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeThreePRTNotepad.Text15'.", repo.ElapsedTimeThreePRTNotepad.Text15Info, new RecordItemIndex(24));
             Host.Current.CloseApplication(repo.ElapsedTimeThreePRTNotepad.Text15, new Duration(0));
             Delay.Milliseconds(0);
@@ -187,8 +188,8 @@ namespace SpeedTests
             repo.SnapXUntitled.Finish.Click();
             Delay.Milliseconds(200);
             
-            Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(27));
-            Delay.Duration(4000, false);
+            Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(27));
+            Delay.Duration(6000, false);
             
         }
 

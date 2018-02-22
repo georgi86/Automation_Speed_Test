@@ -75,7 +75,7 @@ namespace SpeedTests
         void ITestModule.Run()
         {
             Mouse.DefaultMoveTime = 400;
-            Keyboard.DefaultKeyPressTime = 200;
+            Keyboard.DefaultKeyPressTime = 100;
             Delay.SpeedFactor = 1.00;
 
             Init();
@@ -86,15 +86,15 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence '{LMenu}'.", new RecordItemIndex(1));
             Keyboard.Press("{LMenu}");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence 'f'.", new RecordItemIndex(2));
             Keyboard.Press("f");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence 'o'.", new RecordItemIndex(3));
             Keyboard.Press("o");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left DoubleClick item 'OpenSnapXRoutine.FileNameField' at 202;5.", repo.OpenSnapXRoutine.FileNameFieldInfo, new RecordItemIndex(4));
             repo.OpenSnapXRoutine.FileNameField.DoubleClick("202;5");
@@ -102,15 +102,15 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence '{Delete}' with focus on 'OpenSnapXRoutine.FileNameField'.", repo.OpenSnapXRoutine.FileNameFieldInfo, new RecordItemIndex(5));
             repo.OpenSnapXRoutine.FileNameField.PressKeys("{Delete}");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence 'D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Routines\\SpeedThree.mxy'.", new RecordItemIndex(6));
             Keyboard.Press("D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Routines\\SpeedThree.mxy");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence '{Return}' with focus on 'OpenSnapXRoutine.FileNameField'.", repo.OpenSnapXRoutine.FileNameFieldInfo, new RecordItemIndex(7));
             repo.OpenSnapXRoutine.FileNameField.PressKeys("{Return}");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.TitleBar' at 668;9.", repo.SnapXUntitled.TitleBarInfo, new RecordItemIndex(8));
             repo.SnapXUntitled.TitleBar.Click("668;9");
@@ -118,26 +118,30 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence '{LMenu}'.", new RecordItemIndex(9));
             Keyboard.Press("{LMenu}");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence 'f'.", new RecordItemIndex(10));
             Keyboard.Press("f");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence 'r'.", new RecordItemIndex(11));
             Keyboard.Press("r");
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ButtonOK' at Center.", repo.SnapXUntitled.ButtonOKInfo, new RecordItemIndex(12));
             repo.SnapXUntitled.ButtonOK.Click();
             Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Wait", "Waiting 4m for item 'SnapXUntitled.ReMeasure' to exist.", repo.SnapXUntitled.ReMeasureInfo, new ActionTimeout(240000), new RecordItemIndex(13));
-            repo.SnapXUntitled.ReMeasureInfo.WaitForExists(240000);
-            
+
+            //Report.Log(ReportLevel.Info, "Wait", "Waiting 4m for item 'SnapXUntitled.ReMeasure' to exist.", repo.SnapXUntitled.ReMeasureInfo, new ActionTimeout(240000), new RecordItemIndex(13));
+            //repo.SnapXUntitled.ReMeasureInfo.WaitForExists(240000);
+            //Delay.Milliseconds(2000);
+
+            repo.SnapXUntitled.ReMeasure.Focus();
+            Delay.Milliseconds(200);
+
             Report.Log(ReportLevel.Info, "Application", "Run application 'D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeThree.PRT' with arguments '' in normal mode.", new RecordItemIndex(14));
             Host.Local.RunApplication("D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeThree.PRT", "", "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports", false);
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Invoke Action", "Invoking Maximize() on item 'ElapsedTimeThreePRTNotepad'.", repo.ElapsedTimeThreePRTNotepad.SelfInfo, new RecordItemIndex(15));
             repo.ElapsedTimeThreePRTNotepad.Self.Maximize();
@@ -147,11 +151,12 @@ namespace SpeedTests
             int iHardcodedThree = 75;
             string ResultRoutineThree = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeThreePRTNotepadAppFolder)repo.ElapsedTimeThreePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
             UtilityRun.RunEx(iHardcodedThree, ResultRoutineThree);
+            Delay.Milliseconds(100);
 
 
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeThreePRTNotepad.Text15'.", repo.ElapsedTimeThreePRTNotepad.Text15Info, new RecordItemIndex(17));
             Host.Current.CloseApplication(repo.ElapsedTimeThreePRTNotepad.Text15, new Duration(0));
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(18));
             Delay.Duration(4000, false);
@@ -159,10 +164,15 @@ namespace SpeedTests
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ReMeasure' at Center.", repo.SnapXUntitled.ReMeasureInfo, new RecordItemIndex(19));
             repo.SnapXUntitled.ReMeasure.Click();
             Delay.Milliseconds(200);
-            
-            Report.Log(ReportLevel.Info, "Wait", "Waiting 4m for item 'SnapXUntitled.Finish' to exist.", repo.SnapXUntitled.FinishInfo, new ActionTimeout(240000), new RecordItemIndex(20));
-            repo.SnapXUntitled.FinishInfo.WaitForExists(240000);
-            
+
+            //Report.Log(ReportLevel.Info, "Wait", "Waiting 4m for item 'SnapXUntitled.Finish' to exist.", repo.SnapXUntitled.FinishInfo, new ActionTimeout(240000), new RecordItemIndex(20));
+            //repo.SnapXUntitled.FinishInfo.WaitForExists(240000);
+            //Delay.Milliseconds(2000);
+
+            repo.SnapXUntitled.Finish.Focus();
+            Delay.Milliseconds(100);
+
+
             Report.Log(ReportLevel.Info, "Application", "Run application 'D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeThree.PRT' with arguments '' in normal mode.", new RecordItemIndex(21));
             Host.Local.RunApplication("D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeThree.PRT", "", "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports", false);
             Delay.Milliseconds(100);
@@ -175,11 +185,11 @@ namespace SpeedTests
             iHardcodedThree = 75;
             string ResultRemeasureThree = ((SpeedTests.SpeedTestsRepositoryFolders.ElapsedTimeThreePRTNotepadAppFolder)repo.ElapsedTimeThreePRTNotepad.Text15Info.ParentFolder).Text15.TextValue;
             UtilityRun.RunEx(iHardcodedThree, ResultRemeasureThree);
-
+            Delay.Milliseconds(100);
 
             Report.Log(ReportLevel.Info, "Application", "Closing application containing item 'ElapsedTimeThreePRTNotepad.Text15'.", repo.ElapsedTimeThreePRTNotepad.Text15Info, new RecordItemIndex(24));
             Host.Current.CloseApplication(repo.ElapsedTimeThreePRTNotepad.Text15, new Duration(0));
-            Delay.Milliseconds(0);
+            Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Delay", "Waiting for 4s.", new RecordItemIndex(25));
             Delay.Duration(4000, false);

@@ -160,12 +160,12 @@ namespace SpeedTests
             /// Creates a new SnapXUntitled  folder.
             /// </summary>
             public SnapXUntitledAppFolder(RepoGenBaseFolder parentFolder) :
-                    base("SnapXUntitled", "/form[@title='Snap-X - [Untitled]']", parentFolder, 30000, null, true, "fba33c25-8c4b-40d7-9138-93af7c3ad7b6", "")
+                    base("SnapXUntitled", "/form[@title='Snap-X - [Untitled]']", parentFolder, 500000, null, true, "fba33c25-8c4b-40d7-9138-93af7c3ad7b6", "")
             {
-                _titlebarInfo = new RepoItemInfo(this, "TitleBar", "titlebar[@accessiblerole='TitleBar']", 30000, null, "db7aafa7-e18d-40aa-8b9f-4beccd9956b0");
-                _buttonokInfo = new RepoItemInfo(this, "ButtonOK", "container/form//button[@text='&OK']", 30000, null, "f7b05518-65b8-4d1a-b3d0-ef4b40182a53");
-                _remeasureInfo = new RepoItemInfo(this, "ReMeasure", "container/form/?/?/element/element/container/button[@text='Re-Measure']", 30000, null, "fdde19aa-2930-49b2-b57f-e7ed19b7f556");
-                _finishInfo = new RepoItemInfo(this, "Finish", "container/form/?/?/element/element/container/button[@text='Finish']", 30000, null, "5274fe14-9b92-4e07-9dbc-ece5afef7527");
+                _titlebarInfo = new RepoItemInfo(this, "TitleBar", "titlebar[@accessiblerole='TitleBar']", 500000, null, "db7aafa7-e18d-40aa-8b9f-4beccd9956b0");
+                _buttonokInfo = new RepoItemInfo(this, "ButtonOK", "container/form//button[@text='&OK']", 500000, null, "f7b05518-65b8-4d1a-b3d0-ef4b40182a53");
+                _remeasureInfo = new RepoItemInfo(this, "ReMeasure", "container/form/?/?/element/element/container/button[@text='Re-Measure' and @enabled='True']", 1000000, null, "fdde19aa-2930-49b2-b57f-e7ed19b7f556");
+                _finishInfo = new RepoItemInfo(this, "Finish", "container/form/?/?/element/element/container/button[@text='Finish' and @enabled='True']", 1000000, null, "5274fe14-9b92-4e07-9dbc-ece5afef7527");
             }
 
             /// <summary>

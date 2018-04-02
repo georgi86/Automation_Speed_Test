@@ -25,7 +25,7 @@ namespace UtilityFunctions
         public static void RunPositiveResult(int ActualTime)
         {
             string ActualValue = "Actual Value is: " + ActualTime;
-            Ranorex.Report.Error("Sucessfully Performed: ", ActualValue);
+            Ranorex.Report.Success("Sucessfully Performed: ", ActualValue);
         }
 
         public static void RunNegativeResult(int nActualTime, int nHardcodedTime, int nErrorLine)

@@ -85,6 +85,21 @@ namespace SpeedTests
 
             Init();
 
+            string strOneFilePath = "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeOne.PRT";
+            System.IO.File.Delete(strOneFilePath);
+
+            string strTwoFilePath = "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeTwo.PRT";
+            System.IO.File.Delete(strTwoFilePath);
+
+            string strThreeFilePath = "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeThree.PRT";
+            System.IO.File.Delete(strThreeFilePath);
+
+            string strFourFilePath = "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeFour.PRT";
+            System.IO.File.Delete(strFourFilePath);
+
+            string strFiveFilePath = "D:\\Joro\\GIT_Automations\\AutomationSpeedTests\\Reports\\ElapsedTimeFive.PRT";
+            System.IO.File.Delete(strFiveFilePath);
+
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.TitleBar' at 663;11.", repo.SnapXUntitled.TitleBarInfo, new RecordItemIndex(0));
             repo.SnapXUntitled.TitleBar.Click("663;11");
             Delay.Milliseconds(200);
@@ -131,10 +146,11 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Keyboard", "Key sequence 'r'.", new RecordItemIndex(11));
             Keyboard.Press("r");
-            Delay.Milliseconds(100);
+            Delay.Milliseconds(200);
+
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ButtonOK' at Center.", repo.SnapXUntitled.ButtonOKInfo, new RecordItemIndex(12));
-            repo.SnapXUntitled.ButtonOK.Click();
+            repo.SnapXUntitled.ButtonOK.Click("45;10");
             Delay.Milliseconds(200);
 
             //This step waits for Remeasure button to becomes an active.To do that you need to check this butto to has not only the text but also to have and accessiblestate(Focusable)
@@ -221,7 +237,11 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(27));
             Delay.Duration(6000, false);
-            
+
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ButtonGo' at 47;149.", repo.SnapXUntitled.ButtonGoInfo, new RecordItemIndex(0));
+            repo.SnapXUntitled.ButtonGo.Click("47;149");
+            Delay.Milliseconds(200);
+
         }
 
 #region Image Feature Data

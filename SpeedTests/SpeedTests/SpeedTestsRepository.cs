@@ -155,6 +155,7 @@ namespace SpeedTests
             RepoItemInfo _buttonokInfo;
             RepoItemInfo _remeasureInfo;
             RepoItemInfo _finishInfo;
+            RepoItemInfo _buttongoInfo;
 
             /// <summary>
             /// Creates a new SnapXUntitled  folder.
@@ -166,6 +167,8 @@ namespace SpeedTests
                 _buttonokInfo = new RepoItemInfo(this, "ButtonOK", "container/form//button[@text='&OK']", 500000, null, "f7b05518-65b8-4d1a-b3d0-ef4b40182a53");
                 _remeasureInfo = new RepoItemInfo(this, "ReMeasure", "container/form/?/?/element/element/container/button[@text='Re-Measure' and @enabled='True']", 1000000, null, "fdde19aa-2930-49b2-b57f-e7ed19b7f556");
                 _finishInfo = new RepoItemInfo(this, "Finish", "container/form/?/?/element/element/container/button[@text='Finish' and @enabled='True']", 1000000, null, "5274fe14-9b92-4e07-9dbc-ece5afef7527");
+                _buttongoInfo = new RepoItemInfo(this, "ButtonGo", "container[@controlid='59648']/form[@controlid='65281']//element[@controlid='59664']/container[@controlid='59648']/button[@text='Go']", 30000, null, "acfdcc93-fe78-46ca-80a6-8aa1b2bc5f34");
+
             }
 
             /// <summary>
@@ -285,6 +288,26 @@ namespace SpeedTests
                 get
                 {
                     return _finishInfo;
+                }
+            }
+            [RepositoryItem("acfdcc93-fe78-46ca-80a6-8aa1b2bc5f34")]
+            public virtual Ranorex.Button ButtonGo
+            {
+                get
+                {
+                    return _buttongoInfo.CreateAdapter<Ranorex.Button>(true);
+                }
+            }
+
+            /// <summary>
+            /// The ButtonGo item info.
+            /// </summary>
+            [RepositoryItemInfo("acfdcc93-fe78-46ca-80a6-8aa1b2bc5f34")]
+            public virtual RepoItemInfo ButtonGoInfo
+            {
+                get
+                {
+                    return _buttongoInfo;
                 }
             }
         }

@@ -130,7 +130,7 @@ namespace SpeedTests
             Delay.Milliseconds(100);
             
             Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ButtonOK' at Center.", repo.SnapXUntitled.ButtonOKInfo, new RecordItemIndex(12));
-            repo.SnapXUntitled.ButtonOK.Click();
+            repo.SnapXUntitled.ButtonOK.Click("45;10");
             Delay.Milliseconds(200);
 
             //Report.Log(ReportLevel.Info, "Wait", "Waiting 4m for item 'SnapXUntitled.ReMeasure' to exist.", repo.SnapXUntitled.ReMeasureInfo, new ActionTimeout(240000), new RecordItemIndex(13));
@@ -201,7 +201,11 @@ namespace SpeedTests
             
             Report.Log(ReportLevel.Info, "Delay", "Waiting for 6s.", new RecordItemIndex(27));
             Delay.Duration(6000, false);
-            
+
+            Report.Log(ReportLevel.Info, "Mouse", "Mouse Left Click item 'SnapXUntitled.ButtonGo' at 47;149.", repo.SnapXUntitled.ButtonGoInfo, new RecordItemIndex(0));
+            repo.SnapXUntitled.ButtonGo.Click("47;149");
+            Delay.Milliseconds(200);
+
         }
 
 #region Image Feature Data
